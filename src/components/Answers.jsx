@@ -1,23 +1,23 @@
-import Classes from "../styles/Answers.module.css";
+import classes from "../styles/Answers.module.css";
 import Checkbox from "./Checkbox";
 
 export default function Answers() {
   return (
-    <div className={Classes.answers}>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={`${Classes.answer} ${Classes.correct}`}>
+    <div className={classes.answers}>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={`${classes.answer} ${classes.correct}`}>
         A New Hope 1
       </Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={`${Classes.answer} ${Classes.wrong}`}>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={`${classes.answer} ${classes.wrong}`}>
         A New Hope 1
       </Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
-      <Checkbox className={Classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
+      <Checkbox className={classes.answer}>A New Hope 1</Checkbox>
     </div>
   );
 }

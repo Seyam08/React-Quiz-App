@@ -1,5 +1,5 @@
 import singupImg from "../../assets/images/signup.svg";
-import Classes from "../../styles/Signup.module.css";
+import classes from "../../styles/Signup.module.css";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
 import Form from "../Form";
@@ -13,7 +13,7 @@ export default function Signup() {
       <div className="column">
         <Illustration image={singupImg} />
 
-        <Form className={`${Classes.signup}`}>
+        <Form className={`${classes.signup}`}>
           <TextInput type="text" placeholder="Enter name" icon="person" />
           <TextInput
             type="text"
