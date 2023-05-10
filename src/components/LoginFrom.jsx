@@ -52,7 +52,7 @@ export default function LoginForm() {
         autoComplete="on"
       />
       <Button type="submit" disabled={loading}>
-        <span>Login</span>
+        <span>Signin</span>
       </Button>
 
       {error && <p className="error">{error}</p>}
