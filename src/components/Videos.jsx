@@ -18,9 +18,9 @@ export default function Videos() {
           next={() => setPage(page + 6)}
           className={classes.videosGrid}
         >
-          {videos.map((video) =>
+          {videos.map((video, index) =>
             video.noq > 0 ? (
-              <Link to="/quiz" key={video.youtubeID}>
+              <Link to="/quiz" key={`link_${video.youtubeID}`}>
                 <Video
                   title={video.title}
                   id={video.youtubeID}
@@ -28,7 +28,12 @@ export default function Videos() {
                 />
               </Link>
             ) : (
-              <Video title={video.title} id={video.youtubeID} noq={video.noq} />
+              <Video
+                title={video.title}
+                id={video.youtubeID}
+                noq={video.noq}
+                key={index}
+              />
             )
           )}
         </InfiniteScroll>
