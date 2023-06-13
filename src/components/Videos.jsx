@@ -15,6 +15,7 @@ export default function Videos() {
         <InfiniteScroll
           dataLength={videos.length}
           hasMore={hasMore}
+          loader={<h4>Loading</h4>}
           next={() => setPage(page + 6)}
           className={classes.videosGrid}
         >
