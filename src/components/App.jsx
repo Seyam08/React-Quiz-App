@@ -23,7 +23,7 @@ function App() {
             </Route>
             <Route path="/" element={<PrivateOutlet />}>
               <Route exact path="quiz/:id" element={<Quiz />} />
-              <Route exact path="result" element={<Result />} />
+              <Route exact path="result/:id" element={<Result />} />
             </Route>
           </Routes>
         </Layout>
