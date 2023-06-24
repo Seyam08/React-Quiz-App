@@ -80,12 +80,7 @@ export default function Quiz() {
       [id]: qna,
     });
 
-    navigate({
-      pathname: `/result/${id}`,
-      state: {
-        qna: qna,
-      },
-    });
+    navigate(`/result/${id}`, { state: { qna } });
   };
 
   return (
@@ -95,7 +90,6 @@ export default function Quiz() {
       {!loading && !error && qna && qna.length > 0 && (
         <>
           <h1>{qna[currentQues].title}</h1>
-          {console.log(currentUser)}
           <h4>Question can have multiple answers</h4>
           <Answers
             options={qna[currentQues].options}
