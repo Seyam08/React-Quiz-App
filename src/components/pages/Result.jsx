@@ -7,12 +7,13 @@ import Summary from "../Summary";
 export default function Result() {
   const { id } = useParams();
   const { state } = useLocation();
-  const qna = state;
+  const { qna } = state;
 
   const { loading, error, answers } = useAnswers(id);
 
   const calculate = () => {
-    let score = 0;
+    let score = 0,
+      numOfCorrect = 0;
 
     answers.forEach((question, index1) => {
       let correctIndexs = [],
@@ -30,10 +31,11 @@ export default function Result() {
 
       if (_.isEqual(correctIndexs, checkedIndexs)) {
         score = score + 5;
+        numOfCorrect = numOfCorrect + 1;
       }
     });
 
-    return score;
+    return { score, numOfCorrect };
   };
   const userScore = calculate();
 
@@ -43,8 +45,12 @@ export default function Result() {
       {error && <div>something went wrong!</div>}
       {answers && answers.length > 0 && (
         <>
-          <Summary score={userScore} noq={answers.length} />
-          <Analysis answers={answers} />
+          <Summary score={userScore.score} noq={answers.length} />
+          <Analysis
+            answers={answers}
+            numOfCorrectAns={userScore.numOfCorrect}
+            noq={answers.length}
+          />
         </>
       )}
     </>
