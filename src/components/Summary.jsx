@@ -12,15 +12,9 @@ export default function Summary({ score, noq }) {
         </p>
       </div>
 
-      {loading && <div className={classes.badge}>loading your badge...</div>}
-
-      {error && <div className={classes.badge}>Something went wrong!</div>}
-
-      {!loading && !error && (
-        <div className={classes.badge}>
-          <img src={img} alt="Success" />
-        </div>
-      )}
+      <div className={classes.badge}>
+        <img src={img} alt="Success" />
+      </div>
     </div>
   );
 }
