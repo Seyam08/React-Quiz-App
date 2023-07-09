@@ -34,7 +34,7 @@ export default function Summary({ score, noq }) {
         </p>
       </div>
 
-      {loading && <div className={classes.badge}>loading your badge...</div>}
+      {loading && <div className={classes.badge}>Loading your badge...</div>}
 
       {error && <div className={classes.badge}>Something went wrong!</div>}
 
