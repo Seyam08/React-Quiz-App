@@ -1,4 +1,9 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import "../styles/App.css";
 import Layout from "./Layout";
@@ -16,14 +21,19 @@ function App() {
       <AuthProvider>
         <Layout>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<Navigate to="/" />} />
+            <Route path="/home" element={<Navigate to="/" />} />
+
             <Route path="/" element={<PublicOutlet />}>
-              <Route exact path="signup" element={<Signup />} />
+              <Route path="signup" element={<Signup />} />
               <Route exact path="login" element={<Login />} />
             </Route>
             <Route path="/" element={<PrivateOutlet />}>
-              <Route exact path="quiz/:id" element={<Quiz />} />
-              <Route exact path="result/:id" element={<Result />} />
+              <Route path="quiz/:id" element={<Quiz />} />
+              <Route path="result/:id" element={<Result />} />
+              <Route path="/quiz" element={<Navigate to="/" />} />
+              <Route path="/result" element={<Navigate to="/" />} />
             </Route>
           </Routes>
         </Layout>
